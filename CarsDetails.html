@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars Gallery</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .fnav {
+            margin-top: 10px;
+            width: 100%;
+            background-color: #b6070754;
+            padding: 0;
+        }
+        .fnav ol {
+            text-align: center;
+            list-style: none;
+            margin: 0; 
+            padding: 0;
+        }
+        .fnav ol li {
+            display: inline-block;
+            padding: 5px 10px; 
+            line-height: 1;
+            cursor: pointer;
+        }
+        .fnav ol li:hover {
+            background-color: orangered;
+            color: white;
+        }
+        .fnav ol li a {
+            color: black;
+            text-decoration: none;
+            padding: 5px 10px; 
+            display: inline-block;
+        }
+        .fnav ol li a:hover {
+            background-color: orangered;
+            color: white;
+        }
+        #car {
+            background-color: white;
+            color: black;
+            font-weight: 900;
+            cursor: none;
+        }
+        .gallery {
+            border-radius: 10px;
+            margin: 16px;
+            border: 0.5px solid black;
+            width: 200px;
+            height: 230px; 
+            overflow: hidden;
+            transition: transform 0.4s ease, background-color 0.4s ease;
+        }
+        .gallery:hover {
+            border: 2px solid black;
+            transform: scale(1.15);
+            background-color: #e0e0e0;
+        }
+        .gallery img {
+            height: auto;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.4s ease;
+        }
+        .gallery:hover img {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+        .desc {
+            padding: 8px;
+            text-align: center;
+            background-color: white;
+            font-weight: bold;
+            font-size: 14px;
+            color: #333;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            border-radius: 0 0 8px 8px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin: 8px 0;
+        }
+        .book-now {
+            padding: 8px 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+        .book-now:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="fnav">
+        <ol>
+            <li><a href="./HomePage.html" target="_blank">Home</a></li>
+            <li><a href="./BikesDetails.html" target="_blank">Bikes</a></li>
+            <li id="car">CARS</li>
+            <li><a href="Offers.html" target="_blank">Special Offers</a></li>
+            <li><a href="ContactUs.html">Contact Us</a></li>
+        </ol>
+    </div>
+
+    <div class="gallery">
+        <img src="./mahindra_XUV700.webp" alt="Mahindra XUV700">
+        <div class="desc">Mahindra XUV700</div>
+        <div class="button-container">
+            <a href="bookcar.html?name=Mahindra+XUV700&mileage=15+kmpl&price=120">
+                <button class="book-now">Book Now</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="gallery">
+        <img src="./mahindra_Bolero_neo.jpeg" alt="Mahindra Bolero Neo">
+        <div class="desc">Mahindra Bolero Neo</div>
+        <div class="button-container">
+            <a href="bookcar.html?name=Mahindra+Bolero+Neo&mileage=17+kmpl&price=100">
+                <button class="book-now">Book Now</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="gallery">
+        <img src="./Mahindra Thar.webp" alt="Mahindra Thar">
+        <div class="desc">Mahindra Thar</div>
+        <div class="button-container">
+            <a href="bookcar.html?name=Mahindra+Thar&mileage=13+kmpl&price=150">
+                <button class="book-now">Book Now</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="gallery">
+        <img src="./Tata_Punch.jpeg" alt="Tata Punch">
+        <div class="desc">Tata Punch</div>
+        <div class="button-container">
+            <a href="bookcar.html?name=Tata+Punch&mileage=18+kmpl&price=90">
+                <button class="book-now">Book Now</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="gallery">
+        <img src="./Tata_Tiago_XZ_Plus.webp" alt="Tata Tiago XZ Plus">
+        <div class="desc">Tata Tiago XZ Plus</div>
+        <div class="button-container">
+            <a href="bookcar.html?name=Tata+Tiago+XZ+Plus&mileage=20+kmpl&price=85">
+                <button class="book-now">Book Now</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="gallery">
+        <img src="./Mahindra_Scorpio.jpeg" alt="Mahindra Scorpio">
+        <div class="desc">Mahindra Scorpio</div>
+        <div class="button-container">
+            <a href="bookcar.html?name=Mahindra+Scorpio&mileage=14+kmpl&price=110">
+                <button class="book-now">Book Now</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="gallery">
+        <img src="./maruti_Suzuki.jpeg" alt="Maruti Suzuki">
+        <div class="desc">Maruti Suzuki</div>
+        <div class="button-container">
+            <a href="bookcar.html?name=Maruti+Suzuki&mileage=22+kmpl&price=75">
+                <button class="book-now">Book Now</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="gallery">
+        <img src="./kia_seltos.jpeg" alt="Kia Seltos">
+        <div class="desc">Kia Seltos</div>
+        <div class="button-container">
+            <a href="bookcar.html?name=Kia+Seltos&mileage=16+kmpl&price=120">
+                <button class="book-now">Book Now</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="gallery">
+        <img src="./hyundai_i20.jpeg" alt="Hyundai i20">
+        <div class="desc">Hyundai i20</div>
+        <div class="button-container">
+            <a href="bookcar.html?name=Hyundai+i20&mileage=19+kmpl&price=95">
+                <button class="book-now">Book Now</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="gallery">
+        <img src="./Tata_nexon EV.jpeg" alt="Tata Nexon EV">
+        <div class="desc">Tata Nexon EV</div>
+        <div class="button-container">
+            <a href="bookcar.html?name=Tata+Nexon+EV&mileage=15+kmpl&price=130">
+                <button class="book-now">Book Now</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="gallery">
+        <img src="./mg_zs_ev.jpeg" alt="MG ZS EV">
+        <div class="desc">MG ZS EV</div>
+        <div class="button-container">
+            <a href="bookcar.html?name=MG+ZS+EV&mileage=17+kmpl&price=125">
+                <button class="book-now">Book Now</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="gallery">
+        <img src="./kia_carens.jpeg" alt="Kia Carens">
+        <div class="desc">Kia Carens</div>
+        <div class="button-container">
+            <a href="bookcar.html?name=Kia+Carens&mileage=18+kmpl&price=115">
+                <button class="book-now">Book Now</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

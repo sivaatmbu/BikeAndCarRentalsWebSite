@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KTM Bike Rental</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #eaeaea;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        form {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 1 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 500px; 
+        }
+        .flex-container {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        #data {
+            padding-left: 50px; 
+            flex: 1; 
+        }
+        #img {
+            box-sizing: border-box;
+            width: 200px; 
+            height: 200px; 
+            background-image: url('https://assets.otocapital.in/prod/auburn-black-bajaj-avenger-220-image.jpeg'); 
+            background-size: contain; 
+            background-repeat: no-repeat; 
+            background-position: center; 
+            border-radius: 5px; 
+            border: 2px solid #ccc; 
+        }
+
+        h2 {
+            margin: 0;
+            font-size: 24px;
+            text-align: center; 
+            width: 100%; 
+            padding-bottom: 15px;
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="date"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px; 
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+            width: 100%; 
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #dis {
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            background-color: #f1f1f1;
+        }
+        #dis label {
+            display: block;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <br><br><br><br><br><br>
+        <h2>Bike Details</h2> 
+        <div class="flex-container">
+            <div id="data">
+                <p>Bike Name: <strong>KTM</strong></p>
+                <p>Bike Mileage: <strong>41 kmpl</strong></p>
+                <p>Price: <strong>RS. 50/h</strong></p>
+            </div>
+            <div id="img"></div>
+        </div>
+        <label for="lic">Enter your license no:</label>
+        <input type="text" id="lic" required>
+        <label for="adhar">Enter your Aadhar no:</label>
+        <input type="text" id="adhar" required>
+        <label for="count">Choose no of bikes:</label>
+        <input type="number" id="count" min="1" required>
+        <label for="date">Choose your date:</label>
+        <input type="date" id="date" required>
+        <label for="hours">No. of hours:</label>
+        <input type="number" id="hours" min="1" required>
+        <button type="button" id="calculate">Calculate</button>
+        <div id="dis">
+            <label id="noofbikes"></label>
+            <label id="noofhours"></label>
+            <label id="total"></label>
+        </div>
+        <button type="submit">Pay Now</button>
+    </form>
+    <script>
+        document.getElementById("calculate").onclick = function() {
+            let bikescount = document.getElementById("count").value;
+            bikescount = Number(bikescount);
+            let totalhours = document.getElementById("hours").value;
+            totalhours = Number(totalhours);
+            let totalprice = bikescount * 50 * totalhours;
+
+            document.getElementById("noofbikes").innerHTML = "No. of Bikes: " + bikescount;
+            document.getElementById("noofhours").innerHTML = "Total No. of Hours: " + totalhours;
+
+            if (bikescount === 0) {
+                document.getElementById("total").innerHTML = "Choose at least one bike.";
+            } else {
+                document.getElementById("total").innerHTML = "Amount to be paid: <strong>RS. " + totalprice + "</strong>";
+            }
+        }
+    </script>
+</body>
+</html>

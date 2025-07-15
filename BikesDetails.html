@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPC-Bikes</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .fnav {
+            width: 100%;
+            background-color: #b6070754;
+            padding: 0;
+        }
+        .fnav ol {
+            text-align: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .fnav ol li {
+            display: inline-block;
+            padding: 5px 10px;
+            line-height: 1;
+            cursor: pointer;
+        }
+        .fnav ol li:hover {
+            background-color: orangered;
+            color: white;
+        }
+        .fnav ol li a {
+            color: black;
+            text-decoration: none;
+            padding: 5px 10px;
+            display: inline-block;
+        }
+        .fnav ol li a:hover {
+            background-color: orangered;
+            color: white;
+        }
+        #bike {
+            background-color: white;
+            color: red;
+            font-weight: 900;
+            cursor: none;
+        }
+        img {
+            height: auto;
+            width: 100%;
+        }
+        .gallery {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 8px;
+        }
+        .gallery:hover {
+            border: 2px solid blue;
+            transform: scale(1.1);
+            background-color: gray;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+        .desc {
+            margin-top: 10px;
+            text-align: center;
+        }
+        .desc:hover {
+            cursor: pointer;
+        }
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .desc a button {
+            background-color: #37AFE1;
+            color: white;
+            font-weight: 900;
+            border: none;
+            outline: none;
+            border-radius: 20px;
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="fnav">
+        <ol>
+            <li id="bike">Bikes</li>
+            <li><a href="./HomePage.html" target="_blank">HOME</a></li>
+            <li><a href="./CarsDetails.html" target="_blank">CARS</a></li>
+            <li><a href="Offers.html" target="_blank">SPECIAL OFFERS</a></li>
+            <li><a href="ContactUs.html">CONTACT US</a></li>
+        </ol>
+    </div>
+    <div class="gallery-container">
+        <div class="gallery">
+            <img src="./ktm.jpeg" alt="KTM">
+            <div class="desc">Ktm</div>
+            <div class="desc"><a href="BikeBook.html?name=KTM&mileage=30 kmpl&price=100"><button class="mybtn">Book now</button></a></div>
+        </div>
+        <div class="gallery">
+            <img src="./ns-200.jpeg" alt="NS-200">
+            <div class="desc">NS-200</div>
+            <div class="desc"><a href="BikeBook.html?name=NS-200&mileage=35 kmpl&price=90"><button class="mybtn">Book now</button></a></div>
+        </div>
+        <div class="gallery">
+            <img src="./royal-enfield.avif" alt="ROYAL ENFIELD">
+            <div class="desc">ROYAL ENFIELD</div>
+            <div class="desc"><a href="BikeBook.html?name=Royal%20Enfield&mileage=40 kmpl&price=150"><button class="mybtn">Book now</button></a></div>
+        </div>
+        <div class="gallery">
+            <img src="./avenger.jpeg" alt="Avenger">
+            <div class="desc">AVENGER</div>
+            <div class="desc"><a href="BikeBook.html?name=Avenger&mileage=25 kmpl&price=80"><button class="mybtn">Book now</button></a></div>
+        </div>
+        <div class="gallery">
+            <img src="./duke.webp" alt="Duke">
+            <div class="desc">Duke</div>
+            <div class="desc"><a href="BikeBook.html?name=Duke&mileage=32 kmpl&price=110"><button class="mybtn">Book now</button></a></div>
+        </div>
+        <div class="gallery">
+            <img src="./r15.jpeg" alt="R15">
+            <div class="desc">R15</div>
+            <div class="desc"><a href="BikeBook.html?name=R15&mileage=45 kmpl&price=120"><button class="mybtn">Book now</button></a></div>
+        </div>
+        <div class="gallery">
+            <img src="./himalayan.avif" alt="Himalayan">
+            <div class="desc">Himalayan</div>
+            <div class="desc"><a href="BikeBook.html?name=Himalayan&mileage=30 kmpl&price=100"><button class="mybtn">Book now</button></a></div>
+        </div>
+        <div class="gallery">
+            <img src="./honda_activa.jpeg" alt="Honda Activa">
+            <div class="desc">Honda Activa</div>
+            <div class="desc"><a href="BikeBook.html?name=Honda%20Activa&mileage=60 kmpl&price=40"><button class="mybtn">Book now</button></a></div>
+        </div>
+        <div class="gallery">
+            <img src="./yamaha_FZ.jpeg" alt="Yamaha FZ">
+            <div class="desc">Yamaha FZ</div>
+            <div class="desc"><a href="BikeBook.html?name=Yamaha%20FZ&mileage=50 kmpl&price=70"><button class="mybtn">Book now</button></a></div>
+        </div>
+        <div class="gallery">
+            <img src="./bajaj_pulsar.jpeg" alt="Bajaj Pulsar">
+            <div class="desc">Bajaj Pulsar</div>
+            <div class="desc"><a href="BikeBook.html?name=Bajaj%20Pulsar&mileage=45 kmpl&price=85"><button class="mybtn">Book now</button></a></div>
+        </div>
+        <div class="gallery">
+            <img src="./honda_Cb-shine_125cc.jpeg" alt="Honda CB Shine 125cc">
+            <div class="desc">Honda CB Shine 125cc</div>
+            <div class="desc"><a href="BikeBook.html?name=Honda%20CB%20Shine%20125cc&mileage=55 kmpl&price=60"><button class="mybtn">Book now</button></a></div>
+        </div>
+        <div class="gallery">
+            <img src="./hero_glamour_f1.jpeg" alt="Hero Glamour">
+            <div class="desc">Hero Glamour F1</div>
+            <div class="desc"><a href="BikeBook.html?name=Hero%20Glamour%20F1&mileage=50 kmpl&price=75"><button class="mybtn">Book now</button></a></div>
+        </div>
+        <div class="gallery">
+            <img src="./hero_splendor_plus_xtec.webp" alt="Hero Splendor Plus">
+            <div class="desc">Hero Splendor Plus Xtec</div>
+            <div class="desc"><a href="BikeBook.html?name=Hero%20Splendor%20Plus&mileage=60 kmpl&price=40"><button class="mybtn">Book now</button></a></div>
+        </div>
+        <div class="gallery">
+            <img src="./tvs_jupiter.jpeg" alt="TVS Jupiter">
+            <div class="desc">TVS Jupiter</div>
+            <div class="desc"><a href="BikeBook.html?name=TVS%20Jupiter&mileage=55 kmpl&price=50"><button class="mybtn">Book now</button></a></div>
+        </div>
+        <div class="gallery">
+            <img src="./royal_enfield_hunter350.avif" alt="Royal Enfield Hunter 350">
+            <div class="desc">Royal Enfield Hunter 350</div>
+            <div class="desc"><a href="BikeBook.html?name=Royal%20Enfield%20Hunter%20350&mileage=38 kmpl&price=140"><button class="mybtn">Book now</button></a></div>
+        </div>
+        <div class="gallery">
+            <img src="./ktm390_adventure.jpeg" alt="KTM 390 Adventure">
+            <div class="desc">KTM 390 Adventure</div>
+            <div class="desc"><a href="BikeBook.html?name=KTM%20390%20Adventure&mileage=30 kmpl&price=150"><button class="mybtn">Book now</button></a></div>
+        </div>
+        <div class="gallery">
+            <img src="./yamaha_mt09.jpeg" alt="Yamaha MT-09">
+            <div class="desc">Yamaha MT-09</div>
+            <div class="desc"><a href="BikeBook.html?name=Yamaha%20MT-09&mileage=28 kmpl&price=160"><button class="mybtn">Book now</button></a></div>
+        </div>
+        <div class="gallery">
+            <img src="./bajaj_pulsar_rs200.jpeg" alt="Bajaj Pulsar RS200">
+            <div class="desc">Bajaj Pulsar RS200</div>
+            <div class="desc"><a href="BikeBook.html?name=Bajaj%20Pulsar%20RS200&mileage=35 kmpl&price=120"><button class="mybtn">Book now</button></a></div>
+        </div>
+    </div>
+</body>
+</html>

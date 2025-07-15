@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bike Booking</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #bookingForm {
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+            transition: transform 0.3s;
+        }
+        h2 {
+            text-align: center;
+            color: #0072ff;
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+            color: #333;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #0072ff;
+            border-radius: 5px;
+            margin: 5px 0 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #0072ff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #005bb5;
+        }
+        #dis {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+        #total {
+            font-weight: bold;
+            font-size: 18px;
+            color: #0072ff;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="bookingForm">
+        <h2 id="bikeName"></h2>
+        <p id="mileage"></p>
+        <p id="price"></p>
+        <label for="lic">Enter your license no:</label>
+        <input type="text" id="lic" required>
+        <label for="adhar">Enter your Aadhar no:</label>
+        <input type="text" id="adhar" required>
+        <label for="count">Choose no of bikes:</label>
+        <input type="number" id="count" min="1" required>
+        <label for="date">Choose your date:</label>
+        <input type="date" id="date" required>
+        <label for="hours">No. of hours:</label>
+        <input type="number" id="hours" min="1" required>
+        <button type="button" id="calculate">Calculate</button>
+        <div id="dis">
+            <label id="noofbikes"></label><br>
+            <label id="noofhours"></label><br>
+            <label id="total"></label>
+        </div>
+        <button type="button" id="payNow">Pay Now</button>
+    </div>
+
+    <script>
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+    const bikeName = getQueryParam('name');
+    const mileage = getQueryParam('mileage');
+    let price = getQueryParam('price');
+
+    if (bikeName) document.getElementById('bikeName').textContent = bikeName;
+    if (mileage) document.getElementById('mileage').textContent = "Mileage: " + mileage;
+    if (price) {
+        price = Number(price);
+        document.getElementById('price').textContent = "Price: RS. " + price + "/h";
+    } else {
+        price = 0;
+        document.getElementById('price').textContent = "Price not specified in URL.";
+    }
+
+    let totalprice = 0; 
+    document.getElementById("calculate").onclick = function () {
+        let bikescount = Number(document.getElementById("count").value);
+        let totalhours = Number(document.getElementById("hours").value);
+        totalprice = bikescount * price * totalhours;
+
+        document.getElementById("noofbikes").innerHTML = "No. of Bikes: " + bikescount;
+        document.getElementById("noofhours").innerHTML = "Total No. of Hours: " + totalhours;
+
+        if (bikescount <= 0 || price === 0) {
+            document.getElementById("total").innerHTML = "Choose at least one bike and ensure price is available.";
+        } else {
+            document.getElementById("total").innerHTML = "Amount to be paid: <strong>RS. " + totalprice + "</strong>";
+        }
+    }
+
+    document.getElementById("payNow").onclick = function () {
+        const license = document.getElementById("lic").value;
+        const adhar = document.getElementById("adhar").value;
+        const bikeCount = document.getElementById("count").value;
+        const date = document.getElementById("date").value;
+        const hours = document.getElementById("hours").value;
+        window.location.href = `payment.html?name=${encodeURIComponent(bikeName)}&mileage=${encodeURIComponent(mileage)}&price=${totalprice}&license=${encodeURIComponent(license)}&adhar=${encodeURIComponent(adhar)}&count=${encodeURIComponent(bikeCount)}&date=${encodeURIComponent(date)}&hours=${encodeURIComponent(hours)}`;
+    }
+</script>
+
+
+</body>
+</html>

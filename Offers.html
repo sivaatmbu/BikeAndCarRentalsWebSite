@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        .fnav {
+            width: 100%;
+            background-color: #b6070754;
+            padding: 0;
+            margin-top: 10px;
+        }
+        .fnav ol {
+            text-align: center;
+            list-style: none;
+            margin: 0; 
+            padding: 0;
+        }
+        .fnav ol li {
+            display: inline-block;
+            padding: 5px 10px; 
+            line-height: 1;
+            cursor: pointer;
+        }
+        fnav ol li:hover {
+            background-color: orangered;
+            color: white;
+        }
+        .fnav ol li a {
+            color: black;
+            text-decoration: none;
+            padding: 5px 10px; 
+            display: inline-block;
+        }
+        .fnav ol li a:hover {
+            background-color: orangered;
+            color: white;
+        }
+        #offer{
+            background-color: white;
+            color: red;
+            font-weight: 800;
+            cursor: none;
+        }
+        form {
+            width: 80%;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        img {
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            float: right;
+            margin-top: -60px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        @media (max-width: 768px) {
+            form {
+                width: 90%;
+                padding: 15px;
+            }
+            img {
+                height: 50px;
+                width: 50px;
+                margin-top: -30px;
+            }
+        }
+        h1 {
+            text-align: center;
+            font-size: 2em;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 1.5em;
+            color: #444444;
+            margin-bottom: 10px;
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        li {
+            line-height: 1.8;
+            font-size: 1.1em;
+            color: #555555;
+        }
+        span, h1 {
+            background-color: #e5e5e5;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        form ul li::marker {
+            color: #2b8fd6;
+        }
+        form ul {
+            margin-bottom: 20px;
+        }
+        form {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="fnav">
+        <ol>
+            <li><a href="./wthomepage.html" target="_blank">Home</a></li>
+            <li><a href="./Bikes.html" target="_blank">Bikes</a></li>
+            <li><a href="./cars.html" target="_blank">Cars</a></li>
+            <li id="offer">Special Offer</li>
+            <li> <a href="contactus.html">Contact Us</a></li>
+        </ol>
+    </div>
+    <form>
+        <span><h1>OFFERS:</h1></span>
+        <img src="data:image/png;base64,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" alt="Offer Image">
+        <h2>Hourly and Daily Rentals:</h2>
+        <ul>
+            <li>Special Offers: Look for multi-day rentals where you can get the 3rd or 4th day free, common in tourist-heavy areas.</li>
+            <li>Seasonal Promotions: Some places offer discounts during off-peak times (e.g., weekday rentals are cheaper than weekends).</li>
+        </ul>
+        <h2>Group and Family Discounts:</h2>
+        <ul>
+            <li>Group Rentals: Booking multiple bikes together can often get you a discount.</li>
+            <li>Family Offers: Some places have family deals where children's bikes are rented at lower prices or free with adult rentals.</li>
+        </ul>
+        <h2>Student Discounts:</h2>
+        <ul>
+            <li>Local Bike Shops: Many local bike rental shops offer discounts for students, especially those near universities or campuses. These discounts typically range from 10% to 20% off daily, weekly, or even monthly rentals.</li>
+            <li>Student ID Requirement: Most places will require you to show a valid student ID to access the discount.</li>
+        </ul>
+        <h2>Memberships and Loyalty Programs:</h2>
+        <ul>
+            <li>Frequent Rider Memberships: Some services have tiered pricing for frequent users, with rewards or free hours after accumulating rentals.</li>
+            <li>First-Time Discounts: Some services offer a percentage off or free first rides for signing up.</li>
+        </ul>
+    </form>
+</body>
+</html>
